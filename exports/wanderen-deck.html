@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>wanderen.ai — deck</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:#000;cursor:crosshair}
+  .deck{display:flex;flex-direction:column;align-items:center;gap:24px;padding:24px 0}
+  .slide{position:relative;width:1280px;height:720px;background:var(--bg);overflow:hidden;flex:none}
+  .slide::before{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;background:var(--scanlines)}
+  .slide::after{content:"";position:absolute;inset:0;z-index:6;pointer-events:none;background:var(--vignette)}
+  .pad{position:relative;z-index:2;height:100%;box-sizing:border-box;padding:64px 72px;display:flex;flex-direction:column}
+  .nebula{position:absolute;inset:0;z-index:0;background:var(--nebula)}
+  .grid-bg{position:absolute;inset:0;z-index:0;background:var(--grid);-webkit-mask-image:radial-gradient(80% 80% at 50% 30%,#000,transparent 75%);mask-image:radial-gradient(80% 80% at 50% 30%,#000,transparent 75%)}
+
+  /* logo */
+  .logo{display:flex;align-items:center;gap:16px;line-height:1}
+  .logo img{height:.9em;width:auto;image-rendering:pixelated;filter:drop-shadow(0 0 12px rgba(255,200,61,.4))}
+  .logo .word{font-family:var(--font-display);font-weight:700;color:var(--primary);letter-spacing:-.01em;text-shadow:3px 3px 0 var(--accent),6px 6px 0 rgba(255,71,87,.22),0 0 26px rgba(255,200,61,.3)}
+  .logo .tld{color:var(--tertiary)}
+  .logo .cur{display:inline-block;width:.5em;height:.82em;background:var(--tertiary);box-shadow:0 0 10px var(--glow-cyan)}
+
+  /* section header */
+  .sec{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+  .sec .kick{font-family:var(--font-pixel);font-size:18px;letter-spacing:.12em;color:var(--tertiary)}
+  .sec .zh{font-family:var(--font-display);font-weight:900;font-size:30px;color:var(--text-hi)}
+  .sec .line{flex:1;height:2px;background:linear-gradient(90deg,var(--border),transparent)}
+
+  /* cards */
+  .cards{display:grid;gap:18px;flex:1}
+  .g6{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr)}
+  .g4{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr)}
+  .card{position:relative;border:3px solid var(--border);background:var(--surface);box-shadow:6px 6px 0 #000;padding:20px 18px;display:flex;flex-direction:column;gap:8px}
+  .card .tag{position:absolute;top:-3px;right:12px;font-family:var(--font-body);font-size:11px;font-weight:700;padding:2px 9px;background:var(--accent);color:#fff}
+  .card.dev{opacity:.8}
+  .card.dev .tag{background:var(--border);color:var(--text-muted)}
+  .card .emoji{font-size:30px;line-height:1}
+  .card h3{font-family:var(--font-display);font-weight:900;font-size:19px;color:var(--text-hi);margin:0;line-height:1.25}
+  .card h3 .alt{font-family:var(--font-body);font-weight:400;font-size:12px;color:var(--text-muted);margin-left:6px}
+  .card p{font-family:var(--font-body);font-size:12.5px;line-height:1.55;color:var(--text-muted);margin:0;flex:1}
+  .card .play{font-family:var(--font-pixel);font-size:9px;letter-spacing:.06em;color:var(--primary)}
+
+  .center{align-items:flex-start;justify-content:center;gap:22px}
+  .tagline{font-family:var(--font-body);font-size:24px;font-weight:700;color:var(--text);margin:0}
+  .tagline .vs{font-family:var(--font-pixel);font-size:.7em;color:var(--accent);padding:0 .35em}
+  .sub{font-family:var(--font-body);font-size:18px;line-height:1.7;color:var(--text-muted);max-width:760px;margin:0}
+  .sub em{font-style:normal;color:var(--tertiary)}
+  .invite{font-family:var(--font-mono);font-size:14px;color:var(--text-faint);margin:0}
+
+  /* closing */
+  .press{font-family:var(--font-pixel);font-size:64px;color:var(--primary);text-shadow:5px 5px 0 var(--accent),0 0 30px rgba(255,200,61,.3);letter-spacing:.06em;margin:0}
+  .foot{font-family:var(--font-mono);font-size:16px;color:var(--text-muted);margin:0}
+  .foot a{color:var(--tertiary)}
+</style></head>
+<body>
+<div class="deck">
+
+  <!-- 1 · TITLE -->
+  <section class="slide" id="s1">
+    <div class="nebula"></div><div class="grid-bg"></div>
+    <div class="pad center">
+      <div class="logo" style="font-size:80px"><img src="../assets/logo/wanderen-mark.svg" alt=""><span class="word">wanderen<span class="tld">.ai</span></span><span class="cur"></span></div>
+      <p class="tagline">The one who plays · Games<span class="vs">×</span>AI · build, play, dissect</p>
+      <p class="sub">Obsessed with <em>how the smallest logic grows into game-feel</em> — and with using AI to do it fast and satisfying. A clickable arcade of small browser games &amp; AI gamedev tools.</p>
+      <p class="invite">▸ 玩的人 · 游戏 × AI · 边做边玩边拆解</p>
+    </div>
+  </section>
+
+  <!-- 2 · GAMES -->
+  <section class="slide" id="s2">
+    <div class="pad">
+      <div class="sec"><span class="kick">GAMES</span><span class="zh">游戏</span><span class="line"></span></div>
+      <div class="cards g6">
+        <div class="card"><span class="tag">NEW</span><span class="emoji">⚔️</span><h3>Three Kingdoms Survivors<span class="alt">三国幸存者</span></h3><p>A Vampire-Survivors-style horde game in the Three Kingdoms: eight generals, ultimate skills, armies cleared in a thought.</p><span class="play">▶ PRESS TO PLAY</span></div>
+        <div class="card"><span class="tag">NEW</span><span class="emoji">👊</span><h3>Juice Lab<span class="alt">打击感实验室</span></h3><p>From “dead fish” to “addictive”: 19 stackable game-feel techniques, toggle &amp; A/B them, feel how juice is layered.</p><span class="play">▶ PRESS TO PLAY</span></div>
+        <div class="card"><span class="tag">NEW</span><span class="emoji">🗡️</span><h3>mini-dmc<span class="alt">迷你鬼泣</span></h3><p>Devil May Cry’s core combat loop, rebuilt: combos, launchers, air combos, i-frames, D→SSS ranking. Pure Canvas.</p><span class="play">▶ PRESS TO PLAY</span></div>
+        <div class="card"><span class="tag">NEW</span><span class="emoji">⚡</span><h3>Yishan · Parry<span class="alt">一闪</span></h3><p>A one-button rhythm parry: read the light, strike on that one frame. Timing itself becomes the game.</p><span class="play">▶ PRESS TO PLAY</span></div>
+        <div class="card"><span class="tag">NEW</span><span class="emoji">🏞️</span><h3>Misty Valley Walk<span class="alt">幻谷漫步</span></h3><p>Walk first-person into a splat-rendered fantasy valley: Spark rendering + Rapier physics, a world grown from point clouds.</p><span class="play">▶ PRESS TO PLAY</span></div>
+        <div class="card"><span class="emoji">🎭</span><h3>The Game Theory<span class="alt">游戏论</span></h3><p>Play and dissect your own meta-game: an overly honest designer confesses every mechanic that gets you hooked.</p><span class="play">▶ PRESS TO PLAY</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · TOOLS -->
+  <section class="slide" id="s3">
+    <div class="pad">
+      <div class="sec"><span class="kick">TOOLS</span><span class="zh">AI × 游戏开发</span><span class="line"></span></div>
+      <div class="cards g4">
+        <div class="card"><span class="emoji">🟢</span><h3>Slime · Claude Code RPG plugin<span class="alt">插件</span></h3><p>Turn a real Claude Code session into a turn-based RPG: the goal is the Boss, todos are mobs, tokens are resources. “Already addicted? Might as well lean in.”</p><span class="play">▶ GITHUB</span></div>
+        <div class="card dev"><span class="tag">DEV</span><span class="emoji">🧬</span><h3>vs-anatomy<span class="alt">幸存者解剖</span></h3><p>Decompile Vampire Survivors → 157 reusable design atoms (architecture / feel / numbers / economy), each cited to source.</p></div>
+        <div class="card dev"><span class="tag">DEV</span><span class="emoji">🏭</span><h3>Gamage<span class="alt">AI 协作游戏开发框架</span></h3><p>A 6-agent, 5-gate game-dev pipeline template — AI does the work, humans own the feel. Three Kingdoms Survivors was its first run.</p></div>
+        <div class="card dev"><span class="tag">DEV</span><span class="emoji">📈</span><h3>AlphaForge<span class="alt">A股量化工具</span></h3><p>A factor forge for A-shares: a data layer + factor pipeline that turns stock-picking into backtestable, iterable engineering. WIP.</p><span class="play">▶ OPEN</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · CLOSING -->
+  <section class="slide" id="s4">
+    <div class="nebula"></div><div class="grid-bg"></div>
+    <div class="pad center" style="justify-content:center">
+      <p class="press">PRESS START</p>
+      <div class="logo" style="font-size:40px"><img src="../assets/logo/wanderen-mark.svg" alt=""><span class="word">wanderen<span class="tld">.ai</span></span><span class="cur"></span></div>
+      <p class="foot"><a href="https://github.com/bitqs">GitHub @bitqs</a> · 🧰 Phaser · TypeScript · Remotion · Cloudflare · Claude Code</p>
+    </div>
+  </section>
+
+</div>
+</body></html>

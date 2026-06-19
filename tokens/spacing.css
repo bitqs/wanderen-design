@@ -1,0 +1,52 @@
+/* ============================================================
+   WANDEREN — SPACING & SIZING TOKENS
+   Strict 4px pixel grid. Everything snaps.
+   ============================================================ */
+
+:root {
+  /* --- Base unit: 4px pixel grid --- */
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
+
+  /* --- Container widths --- */
+  --container-sm:   640px;
+  --container-md:   860px;   /* reading column */
+  --container-lg:   1100px;
+  --container-xl:   1320px;
+
+  /* --- Radii: pixel-hard. Corners stay sharp; tiny chamfer max. --- */
+  --radius-none:  0px;
+  --radius-px:    2px;   /* default — barely-there */
+  --radius-sm:    4px;
+  --radius-md:    6px;   /* max for most UI */
+  --radius-pill:  999px; /* reserved: avatars, dots only */
+
+  /* --- Border widths --- */
+  --bw-hair:   1px;
+  --bw:        2px;   /* default pixel border */
+  --bw-thick:  3px;
+
+  /* --- Control heights --- */
+  --control-sm:  32px;
+  --control:     44px;   /* default — also min touch target */
+  --control-lg:  56px;
+
+  /* --- Z layers --- */
+  --z-base:    0;    /* @kind other */
+  --z-raised:  10;   /* @kind other */
+  --z-sticky:  100;  /* @kind other */
+  --z-overlay: 1000; /* @kind other */
+  --z-toast:   1100; /* @kind other */
+}

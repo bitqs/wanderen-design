@@ -1,0 +1,12 @@
+/* ============================================================
+   WANDEREN — WEBFONTS
+   - Press Start 2P  → --font-pixel    (arcade accents, Latin only)
+   - Pixelify Sans   → --font-display  (LATIN pixel headlines — the 像素感)
+   - Noto Sans SC    → --font-display fallback (CN headlines) + --font-body
+                       (CN font is the one the live wanderen.ai source uses)
+   Latin headlines render in Pixelify Sans (pixel); Chinese headlines fall
+   through to Noto Sans SC, exactly as the source site does for CN.
+   To self-host, download these families and replace this @import.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;700;900&display=swap');

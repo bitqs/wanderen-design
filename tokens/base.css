@@ -1,0 +1,67 @@
+/* ============================================================
+   WANDEREN — BASE / RESET  (matched to live wanderen.ai)
+   The default dark arcade canvas + the CRT overlay + crosshair cursor.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font: var(--type-body);
+  cursor: crosshair;                 /* signature: the whole canvas is a play surface */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Headlines: Noto Sans SC, heavy (900) */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: var(--leading-tight);
+  color: var(--text-hi);
+  margin: 0 0 var(--space-4);
+}
+
+p { margin: 0 0 var(--space-4); }
+
+a {
+  color: var(--tertiary);            /* cyan links */
+  text-decoration: none;
+  font-weight: 700;
+  transition: var(--t-color);
+}
+a:hover { color: var(--primary); }   /* → gold on hover (live behaviour) */
+
+code, kbd, pre { font-family: var(--font-mono); font-size: 0.92em; }
+
+::selection { background: var(--wash-red); color: var(--text-hi); }
+
+:focus-visible { outline: none; box-shadow: var(--ring); }
+
+/* Custom scrollbar */
+* { scrollbar-width: thin; scrollbar-color: var(--space-500) transparent; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: var(--space-500); border: 2px solid var(--bg); }
+*::-webkit-scrollbar-thumb:hover { background: var(--primary-deep); }
+
+/* ===== CRT overlay — wrap a full-page region in .wd-crt (or apply to body) ===== */
+.wd-crt { position: relative; }
+.wd-crt::before {
+  content: ""; position: fixed; inset: 0; z-index: 9000; pointer-events: none;
+  background: var(--scanlines);
+}
+.wd-crt::after {
+  content: ""; position: fixed; inset: 0; z-index: 9001; pointer-events: none;
+  background: var(--vignette);
+}
+
+/* Inline scanline overlay for a single contained element */
+.wd-scanlines::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: var(--scanlines); z-index: 1;
+}

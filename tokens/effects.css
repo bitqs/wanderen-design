@@ -1,0 +1,45 @@
+/* ============================================================
+   WANDEREN — EFFECTS TOKENS  (matched to live wanderen.ai)
+   Hard BLACK pixel shadows are the signature. Glow is secondary.
+   ============================================================ */
+
+:root {
+  /* --- Pixel shadows: HARD offset, zero blur, pure black. The look. --- */
+  --shadow-pixel:      6px 6px 0 0 #000;   /* live card shadow */
+  --shadow-pixel-sm:   3px 3px 0 0 #000;
+  --shadow-pixel-lg:   8px 8px 0 0 #000;   /* live card :hover */
+  /* Neon-tinted hard shadows (logo-style stacked offset) */
+  --shadow-pixel-red:     4px 4px 0 var(--red-500), 8px 8px 0 rgba(255,71,87,.25);
+  --shadow-pixel-cyan:    6px 6px 0 0 #000; /* back-compat name */
+  --shadow-pixel-magenta: 6px 6px 0 0 #000; /* back-compat name */
+
+  /* --- Neon glows: used sparingly (focus, active accents) --- */
+  --glow-sm:        0 0 8px var(--glow-gold);
+  --glow:           0 0 16px var(--glow-gold);
+  --glow-lg:        0 0 28px var(--glow-gold), 0 0 56px var(--wash-gold);
+  --glow-magenta:   0 0 16px var(--glow-red);
+  --glow-lime:      0 0 16px var(--glow-cyan);
+  --glow-amber:     0 0 16px var(--glow-gold);
+  --glow-violet:    0 0 16px var(--glow-cyan);
+
+  /* --- Focus ring: gold outline + halo --- */
+  --ring:           0 0 0 2px var(--bg), 0 0 0 4px var(--primary), 0 0 14px var(--glow-gold);
+
+  /* --- Elevation --- */
+  --elev-1:         0 2px 0 0 rgba(0,0,0,0.6);
+  --elev-2:         0 4px 0 0 rgba(0,0,0,0.6), 0 8px 24px rgba(0,0,0,0.5);
+  --elev-float:     0 12px 40px rgba(0,0,0,0.7);
+
+  /* --- Surface decorations (use as background) --- */
+  /* CRT scanlines — dense dark horizontal lines (live value) */
+  --scanlines: repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,.18) 2px 4px); /* @kind other */
+  /* Vignette — darken edges, pull focus to center (live value) */
+  --vignette: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.55) 100%); /* @kind other */
+  /* Pixel grid — faint gold dotted backdrop */
+  --grid: linear-gradient(rgba(255,200,61,0.045) 1px, transparent 1px) 0 0 / 100% 24px,
+          linear-gradient(90deg, rgba(255,200,61,0.045) 1px, transparent 1px) 0 0 / 24px 100%; /* @kind other */
+  /* Hero aurora — gold→red→cyan deep wash */
+  --nebula: radial-gradient(60% 80% at 18% 6%, rgba(255,200,61,0.10), transparent 60%),
+            radial-gradient(50% 70% at 92% 26%, rgba(61,232,255,0.10), transparent 55%),
+            radial-gradient(70% 60% at 60% 100%, rgba(255,71,87,0.08), transparent 60%); /* @kind other */
+}

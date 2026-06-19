@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Landing Hero" description="wanderen.ai arcade hero — gold wordmark logo, CRT backdrop, juice-ready CTAs" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+<script src="../../juice.js"></script>
+<style>
+  html,body{margin:0;background:var(--bg);cursor:crosshair}
+</style>
+</helmet>
+<section style="position:relative;overflow:hidden;background:var(--bg);min-height:100vh;display:flex;align-items:center;justify-content:center">
+  <div style="position:absolute;inset:0;background:var(--nebula)"></div>
+  <div style="position:absolute;inset:0;background:var(--grid);-webkit-mask-image:radial-gradient(80% 80% at 50% 35%, #000, transparent 75%);mask-image:radial-gradient(80% 80% at 50% 35%, #000, transparent 75%)"></div>
+  <div style="position:absolute;inset:0;pointer-events:none;z-index:9000;background:var(--scanlines)"></div>
+  <div style="position:absolute;inset:0;pointer-events:none;z-index:9001;background:var(--vignette)"></div>
+
+  <div style="position:relative;max-width:840px;padding:96px 32px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px">
+    <h1 style="display:flex;align-items:center;gap:clamp(10px,2vw,18px);margin:0;line-height:1;font-size:clamp(40px,7vw,72px)">
+      <img src="../../assets/logo/wanderen-mark.svg" alt="" style="height:.9em;width:auto;image-rendering:pixelated;filter:drop-shadow(0 0 12px rgba(255,200,61,.4));flex:none">
+      <span style="font-family:var(--font-display);font-weight:700;color:var(--primary);letter-spacing:-.01em;text-shadow:3px 3px 0 var(--accent), 6px 6px 0 rgba(255,71,87,.22), 0 0 26px rgba(255,200,61,.30)">wanderen<span style="color:var(--tertiary)">.ai</span></span>
+      <span style="display:inline-block;width:.5em;height:.82em;background:var(--tertiary);box-shadow:0 0 10px var(--glow-cyan);animation:wd-blink 1s steps(1) infinite;flex:none;align-self:center"></span>
+    </h1>
+
+    <p style="font-family:var(--font-body);font-size:1.2rem;font-weight:700;color:var(--text);margin:0">玩的人 · 游戏<span style="color:var(--accent);font-family:var(--font-pixel);font-size:.8em;padding:0 .35em">×</span>AI · 边做边玩边拆解</p>
+
+    <p style="font-family:var(--font-body);font-size:18px;line-height:1.7;color:var(--text-muted);max-width:620px;margin:0">痴迷『<em style="font-style:normal;color:var(--tertiary)">最小的逻辑，如何长出游戏感</em>』—— 也痴迷用 AI 把这件事做快、做爽。试着在这页上随便点几下。</p>
+
+    <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;justify-content:center">
+      <x-import component-from-global-scope="WanderenDesignSystem_eab830.Button" variant="primary" size="lg" icon-right="play" hint-size="220px,56px">PRESS TO PLAY</x-import>
+      <x-import component-from-global-scope="WanderenDesignSystem_eab830.Button" variant="ghost" size="lg" icon="github" hint-size="150px,56px">GitHub</x-import>
+    </div>
+
+    <p style="font-family:var(--font-mono);font-size:12px;color:var(--text-faint);margin:0">🧰 Phaser · TypeScript · Remotion · Cloudflare · Claude Code</p>
+  </div>
+</section>
+</x-dc>
+</body>
+</html>

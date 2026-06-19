@@ -1,0 +1,56 @@
+/* ============================================================
+   WANDEREN — TYPOGRAPHY TOKENS  (matched to live wanderen.ai)
+   Two faces only: Press Start 2P (arcade accents) + Noto Sans SC (everything).
+   ============================================================ */
+
+:root {
+  /* --- Families --- */
+  /* Press Start 2P — the arcade signature. Logo, section labels, CTAs, scores,
+     damage numbers. UPPERCASE, tiny only (≤22px). Latin-only — never CN. */
+  --font-pixel:    "Press Start 2P", "Courier New", monospace;
+  /* Pixelify Sans (Latin) → Noto Sans SC (CN). Latin display reads as pixel;
+     Chinese display falls to Noto Sans SC — the live site's CN face. */
+  --font-display:  "Pixelify Sans", "Noto Sans SC", system-ui, sans-serif;
+  --font-body:     "Noto Sans SC", system-ui, -apple-system, sans-serif;
+  /* Monospace for the rare code/metric line — system mono, no extra webfont. */
+  --font-mono:     ui-monospace, monospace;
+
+  /* --- Weights (Noto Sans SC ships 400 / 700 / 900) --- */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium:  700; /* @kind font */
+  --fw-bold:    900; /* @kind font */
+
+  /* --- Type scale (rem; 1rem = 16px) --- */
+  --text-2xs:   0.6875rem;  /* 11px — pixel micro-labels / CTAs */
+  --text-xs:    0.75rem;    /* 12px */
+  --text-sm:    0.875rem;   /* 14px */
+  --text-base:  1rem;       /* 16px — body */
+  --text-lg:    1.15rem;    /* ~18px — tagline / lead */
+  --text-xl:    1.25rem;    /* 20px — section ZH title */
+  --text-2xl:   1.6rem;     /* ~26px */
+  --text-3xl:   2.25rem;    /* 36px */
+  --text-4xl:   3rem;       /* 48px — hero logo lower bound */
+  --text-5xl:   4rem;       /* 64px */
+  --text-6xl:   5rem;       /* 80px — XL hero */
+
+  /* --- Line heights --- */
+  --leading-tight:  1.1;
+  --leading-snug:   1.3;
+  --leading-normal: 1.7;    /* live body line-height */
+  --leading-relaxed:1.85;
+
+  /* --- Letter spacing --- */
+  --tracking-pixel:  0.08em;  /* Press Start 2P */
+  --tracking-wide:   0.04em;
+  --tracking-normal: 0;
+  --tracking-tight:  -0.01em;
+
+  /* --- Semantic roles --- */
+  --type-hero:        900 var(--text-6xl)/var(--leading-tight) var(--font-display);
+  --type-display:     900 var(--text-3xl)/var(--leading-tight) var(--font-display);
+  --type-title:       900 var(--text-xl)/var(--leading-snug) var(--font-display);
+  --type-body:        400 var(--text-base)/var(--leading-normal) var(--font-body);
+  --type-body-lg:     400 var(--text-lg)/var(--leading-relaxed) var(--font-body);
+  --type-label:       400 var(--text-2xs)/1 var(--font-pixel);
+  --type-mono:        400 var(--text-sm)/var(--leading-normal) var(--font-mono);
+}

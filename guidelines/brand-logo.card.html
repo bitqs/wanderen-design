@@ -1,0 +1,16 @@
+<!-- @dsCard group="Brand" viewport="700x220" name="Logo / Wordmark" subtitle="Compass-spark mark + Pixelify wordmark + blinking cyan cursor" -->
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;padding:28px 24px;display:flex;flex-direction:column;gap:24px;justify-content:center}
+  .logo{display:flex;align-items:center;gap:14px;line-height:1}
+  .mark{height:.92em;width:auto;image-rendering:pixelated;filter:drop-shadow(0 0 10px rgba(255,200,61,.4));flex:none}
+  .word{font-family:var(--font-display);font-weight:700;color:var(--primary);letter-spacing:-.01em;text-shadow:3px 3px 0 var(--accent), 6px 6px 0 rgba(255,71,87,.22), 0 0 24px rgba(255,200,61,.3)}
+  .cursor{display:inline-block;width:.5em;height:.82em;background:var(--tertiary);box-shadow:0 0 10px var(--glow-cyan);animation:wd-blink 1s steps(1) infinite;flex:none}
+  .tag{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}
+</style></head>
+<body>
+  <div class="logo" style="font-size:48px"><img class="mark" src="../assets/logo/wanderen-mark.svg" alt=""><span class="word">wanderen<span style="color:var(--tertiary)">.ai</span></span><span class="cursor"></span></div>
+  <div class="logo" style="font-size:22px"><img class="mark" src="../assets/logo/wanderen-mark.svg" alt=""><span class="word">wanderen<span style="color:var(--tertiary)">.ai</span></span><span class="cursor"></span></div>
+  <div class="tag">Compass-spark “十字” mark (gold body · cyan core · red satellites) + wordmark in Pixelify Sans + a blinking cyan cursor — the “边做边玩，永远在进行中” motif.</div>
+</body></html>

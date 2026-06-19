@@ -1,0 +1,18 @@
+<!-- @dsCard group="Brand" viewport="700x180" name="Motion · Juice 打击感" subtitle="blink · drop-in · hit-shake + flash · damage numbers" -->
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;padding:24px;display:flex;gap:26px;flex-wrap:wrap;align-items:center;justify-content:center}
+  .box{display:flex;flex-direction:column;align-items:center;gap:14px}
+  .lbl{font-family:var(--font-mono);font-size:10px;color:var(--text-muted)}
+  .blink{font-family:var(--font-pixel);font-size:13px;letter-spacing:.1em;color:var(--primary);animation:wd-blink 1s steps(1) infinite}
+  .drop{font-family:var(--font-pixel);font-size:13px;color:var(--primary);text-shadow:2px 2px 0 var(--accent);animation:wd-drop-in 1.4s var(--ease-pop) infinite}
+  .shakebox{position:relative;width:64px;height:64px;background:var(--surface);border:3px solid var(--border);box-shadow:var(--shadow-pixel);display:flex;align-items:center;justify-content:center;font-size:24px;animation:wd-hitshake .6s linear infinite}
+  .crit{font-family:var(--font-pixel);font-size:14px;color:var(--primary);animation:wd-dmg-pop 1.2s var(--ease-dmg) infinite}
+</style></head>
+<body>
+  <div class="box"><div class="blink">PRESS START</div><div class="lbl">wd-blink</div></div>
+  <div class="box"><div class="drop">DROP-IN</div><div class="lbl">wd-drop-in</div></div>
+  <div class="box"><div class="shakebox">⚔️</div><div class="lbl">wd-hitshake + flash</div></div>
+  <div class="box" style="width:90px;height:64px;justify-content:flex-end"><div class="crit">CRIT! 720</div><div class="lbl">wd-dmg-pop</div></div>
+</body></html>

@@ -1,0 +1,20 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Radii & Borders" subtitle="Corners stay hard — 2px default, 6px max" -->
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;padding:24px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+  .box{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .sq{width:70px;height:70px;background:var(--surface-raised);border:var(--bw) solid var(--border-strong)}
+  .lbl{font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-align:center}
+  .sep{width:1px;align-self:stretch;background:var(--border);margin:0 4px}
+</style></head>
+<body>
+  <div class="box"><div class="sq" style="border-radius:0"></div><div class="lbl">--radius-none<br>0px</div></div>
+  <div class="box"><div class="sq" style="border-radius:var(--radius-px)"></div><div class="lbl">--radius-px<br>2px · default</div></div>
+  <div class="box"><div class="sq" style="border-radius:var(--radius-md)"></div><div class="lbl">--radius-md<br>6px · max</div></div>
+  <div class="box"><div class="sq" style="border-radius:var(--radius-pill);width:70px"></div><div class="lbl">--radius-pill<br>avatars/dots</div></div>
+  <div class="sep"></div>
+  <div class="box"><div class="sq" style="border-width:1px;border-radius:var(--radius-px)"></div><div class="lbl">--bw-hair · 1px</div></div>
+  <div class="box"><div class="sq" style="border-width:2px;border-radius:var(--radius-px)"></div><div class="lbl">--bw · 2px</div></div>
+  <div class="box"><div class="sq" style="border-width:3px;border-radius:var(--radius-px)"></div><div class="lbl">--bw-thick · 3px</div></div>
+</body></html>

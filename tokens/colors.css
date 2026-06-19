@@ -1,0 +1,93 @@
+/* ============================================================
+   WANDEREN — COLOR TOKENS  (matched to live wanderen.ai source)
+   Gold-led arcade. Warm near-black, gold primary, red + cyan accents.
+   Source palette: --bg #0b0b14 · --gold #ffc83d · --red #ff4757 · --cyan #3de8ff
+   ============================================================ */
+
+:root {
+  /* --- Raw: warm space neutrals --- */
+  --void:          #060609;   /* deepest / pixel-shadow black is pure #000 */
+  --space-900:     #0b0b14;   /* page background (live --bg) */
+  --space-800:     #12121f;   /* card / base surface (live --bg-card) */
+  --space-700:     #181826;   /* raised surface */
+  --space-600:     #20203200; /* (unused placeholder) */
+  --space-600x:    #202032;   /* hover surface */
+  --space-500:     #2a2a3e;   /* border (live --border) */
+  --space-400:     #20202f;   /* faint line */
+
+  /* --- Raw: the three brand neons --- */
+  --gold-300:   #ffd76b;
+  --gold-400:   #ffc83d;   /* PRIMARY (live --gold) */
+  --gold-600:   #e6a700;
+  --red-300:    #ff6b78;
+  --red-400:    #ff6b78;   /* kept name (component refs) */
+  --red-500:    #ff4757;   /* ACCENT (live --red) */
+  --red-600:    #e22f40;
+  --cyan-400:   #6beeff;
+  --cyan-500:   #3de8ff;   /* TERTIARY / info (live --cyan) */
+  --cyan-600:   #16c4e0;
+
+  /* --- Ink (warm off-white → muted purple-grey) --- */
+  --ink-hi:     #f4f2ec;
+  --ink:        #e8e6df;   /* live --ink */
+  --ink-mid:    #b6b3c0;
+  --dim:        #8a8798;   /* live --dim */
+  --dim-2:      #5d5b6c;
+  --dim-3:      #3a3947;
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in components
+     ============================================================ */
+
+  /* Backgrounds & surfaces */
+  --bg:               var(--space-900);
+  --bg-deep:          var(--void);
+  --surface:          var(--space-800);
+  --surface-raised:   var(--space-700);
+  --surface-hover:    var(--space-600x);
+  --surface-inset:    #0c0c16;
+
+  /* Borders */
+  --border:           var(--space-500);
+  --border-faint:     var(--space-400);
+  --border-strong:    var(--gold-400);
+
+  /* Text */
+  --text-hi:          var(--ink-hi);
+  --text:             var(--ink);
+  --text-muted:       var(--dim);
+  --text-faint:       var(--dim-2);
+  --text-on-neon:     #0b0b14;   /* dark ink on gold/red/cyan fills */
+
+  /* Brand / interactive */
+  --primary:          var(--gold-400);   /* GOLD leads */
+  --primary-bright:   var(--gold-300);
+  --primary-deep:     var(--gold-600);
+  --accent:           var(--red-500);     /* RED is the spark / NEW / × */
+  --accent-bright:    var(--red-300);
+  --tertiary:         var(--cyan-500);    /* CYAN: links, section labels, cursor */
+
+  /* Status (reuse the three brand hues — tight palette) */
+  --success:          var(--cyan-500);
+  --warning:          var(--gold-400);
+  --danger:           var(--red-500);
+  --info:             var(--cyan-500);
+
+  /* Canonical translucent washes / glows */
+  --glow-gold:        rgba(255, 200, 61, 0.40);
+  --wash-gold:        rgba(255, 200, 61, 0.12);
+  --glow-red:         rgba(255, 71, 87, 0.40);
+  --wash-red:         rgba(255, 71, 87, 0.12);
+  --glow-cyan:        rgba(61, 232, 255, 0.40);
+  --wash-cyan:        rgba(61, 232, 255, 0.12);
+  --scrim:            rgba(6, 6, 12, 0.80);
+
+  /* Back-compat aliases (older component refs → retargeted to brand hues) */
+  --cyan-glow:        var(--glow-gold);   /* focus ring / primary halo = gold */
+  --cyan-wash:        var(--wash-gold);
+  --magenta-glow:     var(--glow-red);
+  --magenta-wash:     var(--wash-red);
+  --lime-glow:        var(--glow-cyan);
+  --amber-glow:       var(--glow-gold);
+  --violet-glow:      var(--glow-cyan);
+}

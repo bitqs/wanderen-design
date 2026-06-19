@@ -1,0 +1,15 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Surface Textures" subtitle="Scanlines · pixel grid · nebula · vignette" -->
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;padding:24px;display:flex;gap:14px;flex-wrap:wrap;align-items:stretch}
+  .tile{flex:1;min-width:140px;height:120px;position:relative;border:var(--bw) solid var(--border);border-radius:var(--radius-px);overflow:hidden;display:flex;align-items:flex-end}
+  .lbl{position:relative;z-index:2;font-family:var(--font-mono);font-size:10px;color:var(--text-hi);padding:8px 10px;background:linear-gradient(transparent,rgba(6,8,15,.8))}
+  .fill{position:absolute;inset:0}
+</style></head>
+<body>
+  <div class="tile" style="background:var(--surface)"><div class="fill" style="background:var(--scanlines)"></div><span class="lbl">--scanlines</span></div>
+  <div class="tile" style="background:var(--bg)"><div class="fill" style="background:var(--grid)"></div><span class="lbl">--grid</span></div>
+  <div class="tile" style="background:var(--bg)"><div class="fill" style="background:var(--nebula)"></div><span class="lbl">--nebula</span></div>
+  <div class="tile" style="background:var(--surface-raised)"><div class="fill" style="background:var(--vignette)"></div><span class="lbl">--vignette</span></div>
+</body></html>

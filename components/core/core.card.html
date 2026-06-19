@@ -1,0 +1,91 @@
+<!-- @dsCard group="Components" viewport="700x620" name="Core" subtitle="Button · IconButton · Badge · Tag · Card · Avatar" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body{margin:0;padding:28px;display:flex;flex-direction:column;gap:24px}
+  .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .lbl{font-family:var(--font-pixel);font-size:9px;letter-spacing:.1em;color:var(--text-faint);text-transform:uppercase;width:100%}
+  .grp{display:flex;flex-direction:column;gap:10px}
+</style></head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  const { Button, IconButton, Badge, Tag, Card, Avatar } = window.WanderenDesignSystem_eab830;
+  function Demo(){
+    const [active,setActive] = React.useState(true);
+    return (
+      <React.Fragment>
+        <div className="grp">
+          <span className="lbl">Button · variants</span>
+          <div className="row">
+            <Button variant="primary" icon="zap">Start wandering</Button>
+            <Button variant="secondary" iconRight="arrow-right">Field notes</Button>
+            <Button variant="accent">Join</Button>
+            <Button variant="ghost">Later</Button>
+            <Button variant="danger">Delete</Button>
+            <Button variant="primary" disabled>Disabled</Button>
+          </div>
+          <div className="row">
+            <Button size="sm">Small</Button>
+            <Button size="md">Medium</Button>
+            <Button size="lg" icon="play">Large</Button>
+          </div>
+        </div>
+
+        <div className="grp">
+          <span className="lbl">IconButton</span>
+          <div className="row">
+            <IconButton icon="search" label="Search" />
+            <IconButton icon="bookmark" label="Save" variant="solid" />
+            <IconButton icon="heart" label="Like" />
+            <IconButton icon="menu" label="Menu" variant="ghost" />
+            <IconButton icon="search" label="Search" size="sm" />
+            <IconButton icon="search" label="Search" size="lg" />
+          </div>
+        </div>
+
+        <div className="grp">
+          <span className="lbl">Badge &amp; Tag</span>
+          <div className="row">
+            <Badge color="magenta">New quest</Badge>
+            <Badge color="cyan" variant="outline">Philosophy</Badge>
+            <Badge color="lime" dot>Online</Badge>
+            <Badge color="amber" variant="outline">Experiment</Badge>
+            <Tag hash onClick={()=>setActive(!active)} active={active}>games</Tag>
+            <Tag hash>ai</Tag>
+            <Tag onRemove={()=>{}}>philosophy</Tag>
+          </div>
+        </div>
+
+        <div className="grp">
+          <span className="lbl">Card &amp; Avatar</span>
+          <div className="row" style={{alignItems:'stretch'}}>
+            <Card variant="raised" interactive padding="md" style={{maxWidth:300}} as="article">
+              <div className="row" style={{marginBottom:10}}>
+                <Avatar name="Mira Okafor" size="sm" /><Badge color="magenta">Field note</Badge>
+              </div>
+              <h3 style={{margin:'0 0 6px',fontSize:20}}>Wander somewhere new</h3>
+              <p style={{margin:0,fontSize:14,color:'var(--text-muted)'}}>Short essays from the edge of play and AI.</p>
+            </Card>
+            <div className="grp" style={{justifyContent:'center'}}>
+              <div className="row">
+                <Avatar name="Mira Okafor" size="lg" ring />
+                <Avatar name="Kai Lin" size="md" />
+                <Avatar name="Anon" shape="round" size="md" />
+                <Avatar name="Z" size="sm" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body></html>

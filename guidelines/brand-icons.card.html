@@ -1,0 +1,31 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Iconography · Pixelarticons" subtitle="800 pixel icons via Iconify CDN — inherit currentColor" -->
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+<style>
+  body{margin:0;padding:24px;display:flex;flex-direction:column;gap:16px;justify-content:center}
+  .grid{display:flex;gap:0;flex-wrap:wrap}
+  .cell{width:64px;height:64px;display:flex;align-items:center;justify-content:center;color:var(--text);border:1px solid var(--border);margin:-1px 0 0 -1px}
+  .cell:hover{color:var(--primary);background:var(--surface)}
+  .neon iconify-icon{color:var(--primary)}
+  .mag iconify-icon{color:var(--accent)}
+  .tok{font-family:var(--font-mono);font-size:11px;color:var(--text-faint)}
+  iconify-icon{font-size:26px}
+</style></head>
+<body>
+  <div class="grid">
+    <div class="cell"><iconify-icon icon="pixelarticons:home"></iconify-icon></div>
+    <div class="cell"><iconify-icon icon="pixelarticons:search"></iconify-icon></div>
+    <div class="cell neon"><iconify-icon icon="pixelarticons:zap"></iconify-icon></div>
+    <div class="cell"><iconify-icon icon="pixelarticons:moon-stars"></iconify-icon></div>
+    <div class="cell mag"><iconify-icon icon="pixelarticons:heart"></iconify-icon></div>
+    <div class="cell"><iconify-icon icon="pixelarticons:bookmark"></iconify-icon></div>
+    <div class="cell"><iconify-icon icon="pixelarticons:map"></iconify-icon></div>
+    <div class="cell"><iconify-icon icon="pixelarticons:gamepad"></iconify-icon></div>
+    <div class="cell"><iconify-icon icon="pixelarticons:chat"></iconify-icon></div>
+    <div class="cell"><iconify-icon icon="pixelarticons:arrow-right"></iconify-icon></div>
+    <div class="cell"><iconify-icon icon="pixelarticons:menu"></iconify-icon></div>
+    <div class="cell"><iconify-icon icon="pixelarticons:user"></iconify-icon></div>
+  </div>
+  <div class="tok">pixelarticons:&lt;name&gt; · kebab-case · render at 24/48/72px for crisp edges</div>
+</body></html>

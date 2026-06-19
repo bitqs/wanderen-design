@@ -1,0 +1,16 @@
+<!-- @dsCard group="Spacing" viewport="700x150" name="Pixel Shadows" subtitle="Hard offset, zero blur — the arcade drop-shadow" -->
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;padding:28px 30px;display:flex;gap:30px;flex-wrap:wrap;align-items:center}
+  .box{display:flex;flex-direction:column;align-items:center;gap:14px}
+  .sq{width:64px;height:64px;background:var(--surface-raised);border:var(--bw) solid var(--border-strong)}
+  .lbl{font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-align:center}
+</style></head>
+<body>
+  <div class="box"><div class="sq" style="box-shadow:var(--shadow-pixel-sm)"></div><div class="lbl">--shadow-pixel-sm</div></div>
+  <div class="box"><div class="sq" style="box-shadow:var(--shadow-pixel)"></div><div class="lbl">--shadow-pixel</div></div>
+  <div class="box"><div class="sq" style="box-shadow:var(--shadow-pixel-lg)"></div><div class="lbl">--shadow-pixel-lg</div></div>
+  <div class="box"><div class="sq" style="box-shadow:var(--shadow-pixel-cyan);border-color:var(--primary)"></div><div class="lbl">--shadow-pixel-cyan</div></div>
+  <div class="box"><div class="sq" style="box-shadow:var(--shadow-pixel-magenta);border-color:var(--accent)"></div><div class="lbl">--shadow-pixel-magenta</div></div>
+</body></html>
