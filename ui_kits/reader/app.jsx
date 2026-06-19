@@ -66,9 +66,72 @@
   ];
   const ALL_TAGS = ["games", "ai", "philosophy", "play"];
 
+  // 《玩的人》— 9 章(题记 + 开篇代表段;全文源在 homo-ludens/book/)。
+  const BOOK = {
+    title: "玩的人",
+    sub: "泛化的「玩」——电子游戏 · 抖音 · 游戏化的工作与人生",
+    chapters: [
+      { id: "ch1", no: "01", title: "第一章 剩下的时间",
+        epi: { q: "只有当人在充分意义上是人的时候，他才游戏；也只有当人游戏的时候，他才是完整的人。", cite: "——席勒《审美教育书简》" },
+        paras: [
+          "玩过《文明》这款游戏的人，多半都领教过一种很特别的悔恨。它甚至有专门的学名，叫「再来一回合」——你发誓打完这一回合就睡，可等你终于舍得抬头，窗外天已经亮了。",
+          "有一件事，我们这代人是头一回大规模碰上的：不必再为了活命，把一整天填满。那么多出来的时间，都流到哪儿去了？几乎整个儿，都交给了玩。",
+        ] },
+      { id: "ch2", no: "02", title: "第二章 谁在另一头",
+        epi: { q: "可叹啊，人竟成了他们自己工具的工具。", cite: "——梭罗《瓦尔登湖》" },
+        paras: [
+          "拉斯维加斯的老虎机房里，你找不到一扇窗，也找不到一只钟——它不愿意让你知道，外头是天黑还是天亮，你已经在这儿坐了多久。",
+          "并不是你在玩它，而是它在玩你。那个「它」最赤裸的一副面孔，就是这一间赌场；而它如今最厉害的化身，已经被搬进了你的口袋。",
+        ] },
+      { id: "ch3", no: "03", title: "第三章 活着的玩",
+        epi: { q: "人皆知有用之用，而莫知无用之用也。", cite: "——《庄子·人间世》" },
+        paras: [
+          "物理学家费曼倦了研究的那阵子，在食堂看见一个学生把餐盘抛向空中，盘子边上的校徽一边转、一边晃。他纯粹出于好玩去算那个晃，算着算着，竟算到了后来拿诺奖的那套工作上。",
+          "正因为那件事毫无用处、纯粹是为自己好玩，它反倒真正来了劲。活着的玩，到底长什么样——这一章就想说这个。",
+        ] },
+      { id: "ch4", no: "04", title: "第四章 守住它",
+        epi: { q: "胜人者有力，自胜者强。", cite: "——《老子》" },
+        paras: [
+          "奥德修斯要经过塞壬的海域，那歌声美得致命。他趁自己还清醒，先把水手的耳朵用蜡封死、把自己绑在桅杆上，并严令途中无论他怎么哀求都不许松绑——于是他活着听完了那本来谁也不该活着听完的歌。",
+          "守住自己的玩儿心，是最难的一关，难就难在：你要提防的那个人，常常就是你自己。",
+        ] },
+      { id: "ch5", no: "05", title: "第五章 反过来玩它",
+        epi: { q: "单凭这一番努力，我就成了一个比原来更好、也更快活的人。", cite: "——富兰克林《自传》" },
+        paras: [
+          "富兰克林二十几岁时给自己列了十三样德性，做了个小本子：每晚挨条对，凡是没守住的，就在那格里点一个黑点。这是一台他亲手给自己造的机器。",
+          "它跟那台借走你快感的机器，用的是同一批零件，却隔着一整本书的距离。这一章要讲的就是：那批本来用来抓你的零件，你到底能不能反过来，为自己所用。",
+        ] },
+      { id: "ch6", no: "06", title: "第六章 造一座花园",
+        epi: { q: "上帝最先栽下的，是一座园子。", cite: "——培根《论造园》" },
+        paras: [
+          "二〇一二年，陈星汉做了一款叫《风之旅人》的游戏：你和一个陌生人在沙漠里相遇，没有名字、没有文字、没有排行榜，唯一能做的，是发出一声短短的鸣叫。很多人玩到结尾会鼻子一酸。",
+          "这一章掉了个头，站到那个一笔一笔设计它的人那一头——怎么造出一座花园，而不是一台拉斯维加斯那样的机器。",
+        ] },
+      { id: "ch7", no: "07", title: "第七章 设计师与玩家",
+        epi: { q: "第一条原则是，你绝不能欺骗你自己——而你正是最好骗的那一个人。", cite: "——费曼《草包族科学》" },
+        paras: [
+          "人类学家舒尔泡在拉斯维加斯十几年。她访谈的莫莉说：「人们永远搞不懂的是，我根本不是为了赢。」她要的是钻进那台机器里，钻进一种连她自己都消失了的状态。",
+          "知道一台机器是怎么抓住你的，丝毫不能让你免于被它抓住。当你既是设局的人、又是入局的人，这道坎最深。",
+        ] },
+      { id: "ch8", no: "08", title: "第八章 玩与活着",
+        epi: { q: "时间是一个玩耍的孩子，在棋盘上挪动着棋子；王权，属于这个孩子。", cite: "——赫拉克利特，残篇" },
+        paras: [
+          "数学家康威逢人就说一句让同行直皱眉的话：他这辈子，从来没有工作过哪怕一天。他玩棋、玩绳子翻花、玩骰子，玩到兴头上，顺手玩出了一门数学。",
+          "求生和玩，到头来是同一股劲的两张脸。一个人在玩的时候，是他最像活着的时候。",
+        ] },
+      { id: "ch9", no: "09", title: "终章 写这本书的人也在玩",
+        epi: { q: "唯有能变的，才能延续——无限的玩家，正是照着这条道理活着的。", cite: "——卡斯《有限与无限的游戏》" },
+        paras: [
+          "写到这一章之前，作者被自己拦了下来。这本书是在一个他自己搭的小系统里写的；写着写着，系统跳出来逼他答：停下来那一刻，是满足，还是空里带着「再来一轮」？他老实填了一个字：空。",
+          "一本讲「玩与被玩」的书，是被一个一边写、一边清楚知道自己正在玩、同时又正在被玩的人写出来的。它要把那把一直在量别人的尺，掉过头来，量握尺的这只手。",
+        ] },
+    ],
+  };
+
   function Sidebar({ route, onNav }) {
     const items = [
       { id: "home", icon: "home", label: "Home" },
+      { id: "book", icon: "book", label: "玩的人 · The Book" },
       { id: "notes", icon: "note", label: "Field notes" },
       { id: "exp", icon: "zap", label: "Experiments" },
       { id: "phil", icon: "comment", label: "Philosophy" },
@@ -219,6 +282,79 @@
     );
   }
 
+  function BookView() {
+    const [prog, setProg] = React.useState(0);
+    const [cur, setCur] = React.useState(0);
+    const [toc, setToc] = React.useState(false);
+    React.useEffect(() => {
+      function onScroll() {
+        const doc = document.documentElement;
+        const h = doc.scrollHeight - doc.clientHeight;
+        const sc = doc.scrollTop || document.body.scrollTop || 0;
+        setProg(h > 0 ? Math.min(100, (sc / h) * 100) : 0);
+        let active = 0;
+        BOOK.chapters.forEach((c, i) => {
+          const el = document.getElementById("bk-" + c.id);
+          if (el && el.getBoundingClientRect().top <= 96) active = i;
+        });
+        setCur(active);
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll);
+      window.scrollTo(0, 0);
+      onScroll();
+      return () => { window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onScroll); };
+    }, []);
+    const jump = (id) => { setToc(false); const el = document.getElementById("bk-" + id); if (el) el.scrollIntoView({ behavior: "smooth" }); };
+    const ch = BOOK.chapters[cur] || BOOK.chapters[0];
+    return (
+      <div>
+        <header style={S.bookBar}>
+          <div style={{ ...S.bookProg, width: prog + "%" }} />
+          <div style={S.bookBarRow}>
+            <span style={S.bookBrand}>玩的人</span>
+            <span style={S.bookDiv} />
+            <span style={S.bookNow} title={ch.title}>{ch.title}</span>
+            <span style={S.bookCount}><b>{cur + 1}</b> / {BOOK.chapters.length}</span>
+            <span style={S.bookPct}>{Math.round(prog)}%</span>
+            <IconButton icon="menu" label="目录" variant={toc ? "solid" : "default"} onClick={() => setToc((v) => !v)} />
+          </div>
+          {toc && (
+            <div style={S.bookToc} onClick={(e) => { if (e.target.tagName !== "A") setToc(false); }}>
+              {BOOK.chapters.map((c, i) => (
+                <a key={c.id} href="#" onClick={(e) => { e.preventDefault(); jump(c.id); }}
+                  style={{ ...S.bookTocItem, ...(i === cur ? S.bookTocActive : {}) }}>
+                  <span style={S.bookTocNum}>{c.no}</span>
+                  <span style={{ flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{c.title}</span>
+                  {i === cur && <Icon name="chevron-right" size={16} />}
+                </a>
+              ))}
+            </div>
+          )}
+        </header>
+        <article style={S.book}>
+          <div style={S.bookHead}>
+            <div style={S.kicker}>The Book</div>
+            <h1 style={S.bookBigTitle}>玩的人</h1>
+            <p style={S.bookSub}>{BOOK.sub}</p>
+          </div>
+          {BOOK.chapters.map((c) => (
+            <section key={c.id} id={"bk-" + c.id} style={S.bookChapter}>
+              <div style={S.bookChNum}>{c.no}</div>
+              <h2 style={S.bookChTitle}>{c.title}</h2>
+              <blockquote style={S.bookEpi}>
+                <span style={S.bookEpiText}>{c.epi.q}</span>
+                <span style={S.bookEpiCite}>{c.epi.cite}</span>
+              </blockquote>
+              {c.paras.map((p, i) => <p key={i} style={S.bookProse}>{p}</p>)}
+            </section>
+          ))}
+          <footer style={S.bookEnd}>—— 全书完 ——</footer>
+        </article>
+      </div>
+    );
+  }
+
   function App() {
     const [state, setState] = React.useState({ route: "home", tab: "all", tags: [], saved: ["roguelike"], open: null });
     const onSave = (id) => setState((s) => ({ ...s, saved: s.saved.includes(id) ? s.saved.filter((x) => x !== id) : [...s.saved, id] }));
@@ -226,10 +362,14 @@
       <div style={S.shell}>
         <Sidebar route={state.route} onNav={(r) => setState((s) => ({ ...s, route: r, open: null }))} />
         <main style={S.main}>
-          <Topbar />
-          {state.open
-            ? <ReadingView post={state.open} saved={state.saved.includes(state.open.id)} onBack={() => setState((s) => ({ ...s, open: null }))} onSave={onSave} />
-            : <IndexView state={state} set={setState} onOpen={(p) => { setState((s) => ({ ...s, open: p })); window.scrollTo(0, 0); }} onSave={onSave} />}
+          {state.route === "book"
+            ? <BookView />
+            : <React.Fragment>
+                <Topbar />
+                {state.open
+                  ? <ReadingView post={state.open} saved={state.saved.includes(state.open.id)} onBack={() => setState((s) => ({ ...s, open: null }))} onSave={onSave} />
+                  : <IndexView state={state} set={setState} onOpen={(p) => { setState((s) => ({ ...s, open: p })); window.scrollTo(0, 0); }} onSave={onSave} />}
+              </React.Fragment>}
         </main>
       </div>
     );
@@ -273,6 +413,34 @@
     quoteText: { fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 26, lineHeight: 1.25, color: "var(--text-hi)" },
     quoteWho: { fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--text-muted)" },
     articleTags: { display: "flex", gap: "var(--space-2)", flexWrap: "wrap", marginTop: "var(--space-8)", paddingTop: "var(--space-8)", borderTop: "var(--bw) solid var(--border)" },
+
+    // —— 玩的人 / The Book ——
+    bookBar: { position: "sticky", top: 0, zIndex: 100, background: "rgba(11,11,20,0.9)", backdropFilter: "blur(10px)", borderBottom: "var(--bw) solid var(--border)" },
+    bookProg: { position: "absolute", top: 0, left: 0, height: 3, background: "var(--primary)", boxShadow: "0 0 8px var(--primary)", transition: "width .1s linear" },
+    bookBarRow: { display: "flex", alignItems: "center", gap: "var(--space-3)", padding: "var(--space-3) var(--space-6)" },
+    bookBrand: { fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 16, color: "var(--text-hi)", letterSpacing: "0.02em", whiteSpace: "nowrap" },
+    bookDiv: { width: "var(--bw)", height: 16, background: "var(--border)", flex: "none" },
+    bookNow: { flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-muted)" },
+    bookCount: { fontFamily: "var(--font-pixel)", fontSize: 10, color: "var(--text-faint)", letterSpacing: "0.05em", whiteSpace: "nowrap" },
+    bookPct: { fontFamily: "var(--font-pixel)", fontSize: 10, color: "var(--text-faint)", whiteSpace: "nowrap" },
+
+    bookToc: { position: "absolute", top: "100%", right: "var(--space-4)", width: "min(88vw, 330px)", background: "var(--surface-raised)", border: "var(--bw) solid var(--border)", boxShadow: "var(--shadow-pixel-lg)", maxHeight: "72vh", overflowY: "auto", zIndex: 110 },
+    bookTocItem: { display: "flex", alignItems: "center", gap: "var(--space-3)", padding: "var(--space-3) var(--space-4)", color: "var(--text-muted)", textDecoration: "none", fontFamily: "var(--font-body)", fontSize: 14, borderBottom: "var(--bw) solid var(--border)" },
+    bookTocActive: { color: "var(--primary)", background: "var(--surface-hover)", fontWeight: 600 },
+    bookTocNum: { fontFamily: "var(--font-pixel)", fontSize: 9, color: "var(--text-faint)", flex: "none", width: 20 },
+
+    book: { maxWidth: 760, width: "100%", margin: "0 auto", padding: "var(--space-12) var(--space-8) var(--space-24)" },
+    bookHead: { textAlign: "center", marginBottom: "var(--space-16)", paddingBottom: "var(--space-10)", borderBottom: "var(--bw) solid var(--border)" },
+    bookBigTitle: { fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 52, color: "var(--text-hi)", margin: "var(--space-3) 0", letterSpacing: "0.04em" },
+    bookSub: { fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-muted)", margin: 0 },
+    bookChapter: { position: "relative", scrollMarginTop: 60, padding: "var(--space-12) 0 var(--space-6)" },
+    bookChNum: { fontFamily: "var(--font-pixel)", fontSize: 13, color: "var(--primary)", letterSpacing: "0.12em", marginBottom: "var(--space-3)" },
+    bookChTitle: { fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 30, lineHeight: 1.3, color: "var(--text-hi)", margin: "0 0 var(--space-5)" },
+    bookEpi: { display: "flex", flexDirection: "column", gap: "var(--space-2)", borderLeft: "var(--bw-thick) solid var(--tertiary)", padding: "var(--space-1) var(--space-5)", margin: "0 0 var(--space-8)" },
+    bookEpiText: { fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.7, color: "var(--text-muted)" },
+    bookEpiCite: { fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--text-faint)" },
+    bookProse: { fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.85, color: "var(--text)", margin: "0 0 var(--space-6)", textAlign: "justify" },
+    bookEnd: { textAlign: "center", fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-faint)", letterSpacing: "0.3em", padding: "var(--space-16) 0 0" },
   };
 
   window.WanderenReader = App;
