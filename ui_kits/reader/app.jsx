@@ -6,6 +6,12 @@
   const { Button, IconButton, Badge, Tag, Card, Avatar, Input, Tabs } = NS;
   const Icon = ({ name, size = 24, color }) =>
     React.createElement("iconify-icon", { icon: "pixelarticons:" + name, width: size, height: size, style: color ? { color } : undefined });
+  // 渲染段落里的 **加粗**(书稿用它标承重句)。
+  const renderRich = (text) =>
+    String(text).split(/(\*\*[^*]+\*\*)/g).map((seg, i) =>
+      seg.startsWith("**") && seg.endsWith("**")
+        ? React.createElement("strong", { key: i }, seg.slice(2, -2))
+        : seg);
 
   const HUE = { games: "magenta", ai: "cyan", philosophy: "violet", play: "amber" };
   const hueVar = (h) => ({ magenta: "--accent", cyan: "--primary", violet: "--tertiary", amber: "--warning" }[h] || "--primary");
@@ -66,8 +72,9 @@
   ];
   const ALL_TAGS = ["games", "ai", "philosophy", "play"];
 
-  // 《玩的人》— 9 章(题记 + 开篇代表段;全文源在 homo-ludens/book/)。
-  const BOOK = {
+  // 《玩的人》— 全文优先用 book-data.js(由 homo-ludens/book/ 生成);
+  // 下面的内联开篇代表段仅作 fallback,让本 kit 脱离数据文件也能跑。
+  const BOOK = window.WANDEREN_BOOK || {
     title: "玩的人",
     sub: "泛化的「玩」——电子游戏 · 抖音 · 游戏化的工作与人生",
     chapters: [
@@ -346,7 +353,7 @@
                 <span style={S.bookEpiText}>{c.epi.q}</span>
                 <span style={S.bookEpiCite}>{c.epi.cite}</span>
               </blockquote>
-              {c.paras.map((p, i) => <p key={i} style={S.bookProse}>{p}</p>)}
+              {c.paras.map((p, i) => <p key={i} style={S.bookProse}>{renderRich(p)}</p>)}
             </section>
           ))}
           <footer style={S.bookEnd}>—— 全书完 ——</footer>
