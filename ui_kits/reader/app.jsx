@@ -13,6 +13,17 @@
         ? React.createElement("strong", { key: i }, seg.slice(2, -2))
         : seg);
 
+  // 视口宽度 → 是否手机。看书页据此切到全宽布局 + 精简标题栏。
+  const useIsMobile = (bp = 720) => {
+    const [m, setM] = React.useState(() => window.innerWidth <= bp);
+    React.useEffect(() => {
+      const on = () => setM(window.innerWidth <= bp);
+      window.addEventListener("resize", on);
+      return () => window.removeEventListener("resize", on);
+    }, [bp]);
+    return m;
+  };
+
   const HUE = { games: "magenta", ai: "cyan", philosophy: "violet", play: "amber" };
   const hueVar = (h) => ({ magenta: "--accent", cyan: "--primary", violet: "--tertiary", amber: "--warning" }[h] || "--primary");
 
@@ -289,7 +300,7 @@
     );
   }
 
-  function BookView() {
+  function BookView({ mobile }) {
     const [prog, setProg] = React.useState(0);
     const [cur, setCur] = React.useState(0);
     const [toc, setToc] = React.useState(false);
@@ -318,12 +329,12 @@
       <div>
         <header style={S.bookBar}>
           <div style={{ ...S.bookProg, width: prog + "%" }} />
-          <div style={S.bookBarRow}>
-            <span style={S.bookBrand}>玩的人</span>
-            <span style={S.bookDiv} />
+          <div style={{ ...S.bookBarRow, ...(mobile ? S.bookBarRowM : {}) }}>
+            {!mobile && <span style={S.bookBrand}>玩的人</span>}
+            {!mobile && <span style={S.bookDiv} />}
             <span style={S.bookNow} title={ch.title}>{ch.title}</span>
             <span style={S.bookCount}><b>{cur + 1}</b> / {BOOK.chapters.length}</span>
-            <span style={S.bookPct}>{Math.round(prog)}%</span>
+            {!mobile && <span style={S.bookPct}>{Math.round(prog)}%</span>}
             <IconButton icon="menu" label="目录" variant={toc ? "solid" : "default"} onClick={() => setToc((v) => !v)} />
           </div>
           {toc && (
@@ -339,7 +350,7 @@
             </div>
           )}
         </header>
-        <article style={S.book}>
+        <article style={{ ...S.book, ...(mobile ? S.bookM : {}) }}>
           <div style={S.bookHead}>
             <div style={S.kicker}>The Book</div>
             <h1 style={S.bookBigTitle}>玩的人</h1>
@@ -363,14 +374,17 @@
   }
 
   function App() {
+    const isMobile = useIsMobile();
     const [state, setState] = React.useState({ route: "home", tab: "all", tags: [], saved: ["roguelike"], open: null });
     const onSave = (id) => setState((s) => ({ ...s, saved: s.saved.includes(id) ? s.saved.filter((x) => x !== id) : [...s.saved, id] }));
+    // 看书页在手机端让正文占满全宽,侧栏让位(章节导航走标题栏的 ☰)。
+    const hideSide = state.route === "book" && isMobile;
     return (
       <div style={S.shell}>
-        <Sidebar route={state.route} onNav={(r) => setState((s) => ({ ...s, route: r, open: null }))} />
+        {!hideSide && <Sidebar route={state.route} onNav={(r) => setState((s) => ({ ...s, route: r, open: null }))} />}
         <main style={S.main}>
           {state.route === "book"
-            ? <BookView />
+            ? <BookView mobile={isMobile} />
             : <React.Fragment>
                 <Topbar />
                 {state.open
@@ -425,6 +439,7 @@
     bookBar: { position: "sticky", top: 0, zIndex: 100, background: "rgba(11,11,20,0.9)", backdropFilter: "blur(10px)", borderBottom: "var(--bw) solid var(--border)" },
     bookProg: { position: "absolute", top: 0, left: 0, height: 3, background: "var(--primary)", boxShadow: "0 0 8px var(--primary)", transition: "width .1s linear" },
     bookBarRow: { display: "flex", alignItems: "center", gap: "var(--space-3)", padding: "var(--space-3) var(--space-6)" },
+    bookBarRowM: { gap: "var(--space-2)", padding: "var(--space-3) var(--space-4)" },
     bookBrand: { fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 16, color: "var(--text-hi)", letterSpacing: "0.02em", whiteSpace: "nowrap" },
     bookDiv: { width: "var(--bw)", height: 16, background: "var(--border)", flex: "none" },
     bookNow: { flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-muted)" },
@@ -437,6 +452,7 @@
     bookTocNum: { fontFamily: "var(--font-pixel)", fontSize: 9, color: "var(--text-faint)", flex: "none", width: 20 },
 
     book: { maxWidth: 760, width: "100%", margin: "0 auto", padding: "var(--space-12) var(--space-8) var(--space-24)" },
+    bookM: { padding: "var(--space-8) var(--space-5) var(--space-20)" },
     bookHead: { textAlign: "center", marginBottom: "var(--space-16)", paddingBottom: "var(--space-10)", borderBottom: "var(--bw) solid var(--border)" },
     bookBigTitle: { fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 52, color: "var(--text-hi)", margin: "var(--space-3) 0", letterSpacing: "0.04em" },
     bookSub: { fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-muted)", margin: 0 },
